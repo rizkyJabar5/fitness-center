@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers: rrk.server.local:9092
+  application:
+    name: payment-fitness
+  docker:
+    compose:
+      file: payment-fitness/compose.yaml
+server:
+  port: 8181

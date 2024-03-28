@@ -1,0 +1,782 @@
+{
+	"info": {
+		"_postman_id": "5b44b455-4e6b-47db-bd67-5e9a76c7dc0d",
+		"name": "fitness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24111961"
+	},
+	"item": [
+		{
+			"name": "authentication & registration",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Hamid Dul\",\n    \"email\": \"hamid@gmail.com\",\n    \"password\": \"password\",\n    \"phoneNumber\": \"089765456321\",\n    \"creditCard\": {\n        \"placeholder\": \"Hamid Dul\",\n        \"cardNumber\": \"9090897367549087\",\n        \"expiredDate\": \"12/2028\",\n        \"cvv\": \"876\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/signup",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/refresh",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"rizky\",\n    \"email\": \"rrkdev5@gmail.com\",\n    \"password\": \"mugiwara\",\n    \"phoneNumber\": \"097393\",\n    \"creditCard\": {\n        \"placeholder\": \"Rizky\",\n        \"cardNumber\": \"9090897367549087\",\n        \"expiredDate\": \"23/2023\",\n        \"cvv\": \"900\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/verify-registration?username=slowlyman12@gmail.com&otp_code=303921",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"verify-registration"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "slowlyman12@gmail.com"
+								},
+								{
+									"key": "otp_code",
+									"value": "303921"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forget password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"rizky\",\n    \"email\": \"rrkdev5@gmail.com\",\n    \"password\": \"mugiwara\",\n    \"phoneNumber\": \"097393\",\n    \"creditCard\": {\n        \"placeholder\": \"Rizky\",\n        \"cardNumber\": \"9090897367549087\",\n        \"expiredDate\": \"23/2023\",\n        \"cvv\": \"900\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/forget-password?email=slowlyman12@gmail.com",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"forget-password"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "slowlyman12@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"mugiwara\",\n    \"newPassword\": \"mugiwara12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/reset-password/slowlyman12@gmail.com?otp_code=825274",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"reset-password",
+								"slowlyman12@gmail.com"
+							],
+							"query": [
+								{
+									"key": "otp_code",
+									"value": "825274"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"hamid@gmail.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/signin",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v3/auth/sign-out",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v3",
+								"auth",
+								"sign-out"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "program",
+			"item": [
+				{
+					"name": "exercises",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"host": [
+										"rrk",
+										"server",
+										"local"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"host": [
+										"rrk",
+										"server",
+										"local"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create new",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"excercise\": \"pushup\",\n    \"description\": \"10X set 1 5X set 2\",\n    \"duration\": \"01:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "rrk.server.local:9090/api/v1/exercises",
+									"host": [
+										"rrk",
+										"server",
+										"local"
+									],
+									"port": "9090",
+									"path": [
+										"api",
+										"v1",
+										"exercises"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "List of program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2NjYyODMxLCJpYXQiOjE2OTY2NTkyMzEsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.JalP2BtkloprVNUfMMsjyLIbpYxdobSRZ54eADjMHLU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/health-programs",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"health-programs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create program",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njg3ODI5LCJpYXQiOjE2OTY2ODQyMjksImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.qCUpoFbmT99uoN_48yIO8wngNdD0HrA4-SK0FQQQgeE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nameOfProgram\": \"Overweight & Obesity\",\n    \"price\": 150000,\n    \"schedule\": \"28-03-2023 19:15:00 WIB\",\n    \"totalMeeting\": 16,\n    \"programDetails\": [\n        {\n            \"exercise\": \"pushup\",\n            \"description\": \"dilakukan bergantian\",\n            \"duration\": \"01:00\"\n        },\n        {\n            \"exercise\": \"skotjam\",\n            \"description\": \"dilakukan bergantian\",\n            \"duration\": \"01:00\"\n        },\n        {\n            \"exercise\": \"yoga\",\n            \"description\": \"dilakukan bergantian\",\n            \"duration\": \"01:00\"\n        },\n        {\n            \"exercise\": \"lari\",\n            \"description\": \"dilakukan bergantian\",\n            \"duration\": \"01:00\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/health-programs",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"health-programs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "member",
+			"item": [
+				{
+					"name": "get all members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/members",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check status registration Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/members/registration-status?email=slowlyman12@gmail.com",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"registration-status"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "slowlyman12@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"mugiwara\",\n    \"newPassword\": \"mugiwara12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/members/0e6d4b97-60ca-4279-bbc8-17f8fe3a9476/change-password",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"0e6d4b97-60ca-4279-bbc8-17f8fe3a9476",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update member info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"creditCard\": {\n        \"placeholder\": \"Rizky Abdul Jabar\",\n        \"cardNumber\": \"8908765367829122\",\n        \"expiredDate\": \"23/2028\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/members/0e6d4b97-60ca-4279-bbc8-17f8fe3a9476",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"members",
+								"0e6d4b97-60ca-4279-bbc8-17f8fe3a9476"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscripton",
+			"item": [
+				{
+					"name": "gett all subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/subscriptions",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create subscription member Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"memberId\": \"fdc020bf-22cb-4367-9dbf-8cccadce9fd0\",\n    \"healthProgramId\": \"f89d8e22-0989-4816-911c-3c53dceca12a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/subscriptions",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check payment status by subscription id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"paymentStatus\": \"unpaid\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/subscriptions/682eaf20-c835-49fe-b6eb-fc969ec27deb/payment-status",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions",
+								"682eaf20-c835-49fe-b6eb-fc969ec27deb",
+								"payment-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "canceled subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YzL2F1dGgvc2lnbmluIiwic3ViIjoic2xvd2x5bWFuMTJAZ21haWwuY29tIiwiZXhwIjoxNjk2Njc3MDg3LCJpYXQiOjE2OTY2NzM0ODcsImF1dGhvcml0aWVzIjpbeyJyb2xlIjoiVXNlciJ9XX0.IC9M67xuhNUyq1yaAf0faKYV4QwbB4a-z-4vt4GUU3M",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"healthProgramId\": \"5e4c5d96-86ff-4be0-ad13-49f32adfac28\",\n    \"subscriptionId\": \"682eaf20-c835-49fe-b6eb-fc969ec27deb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "rrk.server.local:9090/api/v1/subscriptions/member/d584706c-a1ed-40d7-9eec-0525d4811569/cancel",
+							"host": [
+								"rrk",
+								"server",
+								"local"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"v1",
+								"subscriptions",
+								"member",
+								"d584706c-a1ed-40d7-9eec-0525d4811569",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment-message",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "JhbGciOiJIUzI1NiJ9.eyJpc3MiOiIvYXBpL3YxL2F1dGgvc2lnbmluIiwic3ViIjoicnJrZGV2NUBnbWFpbC5jb20iLCJleHAiOjE2OTYzMzAxMjQsImlhdCI6MTY5NjMyNjUyNCwiYXV0aG9yaXRpZXMiOlt7InJvbGUiOiJVc2VyIn1dfQ.zwTfgTRJ1__O0gwiS8opOzh35Csss4eQr2sVglCcI8FXHU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"creditCard\": \"Qqz5C7kBvw6JLxqb6RZFmL20/Nxu3LjVUq7cYWyzJU/ANNxgYhUX7nV/4+pFIPdBk/0rHT38JMbBAyJZ53Y0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "rrk.server.local:8181/api/v2/payments",
+					"host": [
+						"rrk",
+						"server",
+						"local"
+					],
+					"port": "8181",
+					"path": [
+						"api",
+						"v2",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

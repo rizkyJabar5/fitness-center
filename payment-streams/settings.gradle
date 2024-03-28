@@ -1,0 +1,5 @@
+rootProject.name = 'payment-streams'
+
+include 'bill-details'
+include 'payment-fitness'
+include 'base-dto'

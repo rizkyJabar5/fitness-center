@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /
+  port: 9090
+
+spring:
+  application:
+    name: membership-fitness-center
+  profiles:
+    active: local
+
+jwt:
+  secretKey: WHO8SCGSXPK8VFBO2LH5N5HOMH65L5X6OR74AX0N02E82R0CGHK5KGCIDUU4YQM2K4WP3
+

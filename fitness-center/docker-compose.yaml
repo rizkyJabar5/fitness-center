@@ -1,0 +1,23 @@
+version: 1.0.0
+services:
+  fake-smtp-server:
+    container_name: fake-smtp-server
+    image: gessnerfl/fake-smtp-server
+    hostname: "fake-smtp-server"
+    restart: always
+    ports:
+      - 8025:8025      #expose smtp port
+      - 8080:8080      #expose web ui
+      - 8081:8081      #expose management api
+  postgres:
+    container_name: 'fitness-database'
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_DB=mydatabase'
+    ports:
+      - '34671:5432'
+volumes:
+  db:
+    driver: local

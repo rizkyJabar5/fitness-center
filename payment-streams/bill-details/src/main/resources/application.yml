@@ -1,0 +1,10 @@
+spring:
+  kafka:
+    bootstrap-servers: rrk.server.local:9092
+    consumer:
+      auto-offset-reset: earliest
+  application:
+    name: payment-details
+
+server:
+  port: 8282

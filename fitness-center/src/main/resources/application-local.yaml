@@ -1,0 +1,31 @@
+server:
+  address: rrk.server.local
+
+spring:
+  docker:
+    compose:
+      enabled: true
+      file: fitness-center/docker-compose.yaml
+      lifecycle-management: start_and_stop
+      stop:
+        timeout: 10
+      start:
+        log-level: info
+  datasource:
+    url: jdbc:postgresql://rrk.server.local:34671/mydatabase
+    username: myuser
+    password: secret
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        connection:
+          driver_class: org.postgresql.Driver
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+payment:
+  name: payment-fitness
+  url: rrk.server.local:8181
